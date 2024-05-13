@@ -1,0 +1,28 @@
+<div class="alert alert-success" role="alert">
+<h1>{{name.toUpperCase()}}</h1>
+</div>
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{edad}}</dd>
+
+  <td>Metodo:</td>
+  <dd>{{getheroDescription()}}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{capitalizedName }}</dd>
+
+  <button class="btn btn-primary mx-2"
+  *ngIf="name==='ironman'"
+  (click)="changeHero()">Cambiar nombre</button>
+  <button class="btn btn-primary"
+  *ngIf="edad===45"
+  (click)="changeAge()">Cambiar edad</button>
+
+<br/>
+  <button class="btn btn-warning mx-4 pt-2 mt-4"
+  *ngIf="name!=='ironman'"
+  (click)="reset2()">Reset</button>
+</dl>

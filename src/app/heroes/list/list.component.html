@@ -1,0 +1,22 @@
+<h3>Listado Guardianes de la Galaxia 3</h3>
+
+<button *ngIf="listaHeroes.length > 0" class="btn btn-outline-danger" (click)="deleteGuadian()">Borrar ultimo
+  Guardian</button>
+<!-- En este caso en el if le decimos que si ese heroeBorrado esta vacio entoces muestre la referencia mostarTemplate -->
+<div *ngIf="heroeBorrado else mostarTemplate">
+  <h3>Guardian Borrado<small class="text-danger"> {{heroeBorrado}}</small></h3>
+</div>
+
+
+<!-- El <ng-template > es un div que no existe que no se crea hasta que se le indique como se va mostrar -->
+<!-- por lo cual se hace referencia a un identicador declado a nivel del html eso es una referencia local  -->
+<ng-template #mostarTemplate>
+  <h3>No a Borrado nada.</h3>
+</ng-template>
+
+
+<ul class="mt-4 list-group">
+  <li *ngFor="let nombre of listaHeroes" class="list-group-item">{{nombre}}</li>
+
+
+</ul>
